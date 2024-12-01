@@ -92,8 +92,7 @@ public class AtendimentoController {
         String sala = salas[random.nextInt(salas.length)];
 
         // Seleciona um médico aleatório do banco de dados
-        String nomeMedico = medicoRepository.findAll().stream()
-                .findAny()
+        String nomeMedico = medicoRepository.findRandomMedico()
                 .map(Medico::getNome)
                 .orElse("Nenhum Médico Disponível");
 
